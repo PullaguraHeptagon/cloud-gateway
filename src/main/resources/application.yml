@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: student-service-login
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/signin/**
+
+        - id: student-service-api
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/api/**
