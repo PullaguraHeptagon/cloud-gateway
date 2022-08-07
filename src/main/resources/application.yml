@@ -6,6 +6,9 @@ spring:
     name: cloud-gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: student-service-login
           uri: http://localhost:8080/
